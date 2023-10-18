@@ -99,20 +99,6 @@
       
         <a href="{{ url_for('co2_levels') }}">CO2</a>
       
-    </li>
-  
-    <li data-deep-toggle-propagate-target=".flyout__menu" class="dropdown-item">
-      
-        <a href="{{ url_for('sea_levels') }}">Sea Levels</a>
-      
-    </li>
-  
-    <li data-deep-toggle-propagate-target=".flyout__menu" class="dropdown-item">
-      
-        <a href="{{ url_for('air_quality') }}">Air Quality</a>
-      
-    </li>
-  
   
 </ul>
 
@@ -185,41 +171,7 @@
       </div>
     </div>
   
-    
-    <div class="slide active" style="background-image: url('{{ url_for('static', filename='images/slide-mask.png') }}'), url('{{ url_for('static', filename='images/ee2.png') }}');">
-      <div class="container">
-        <div class="slide__content">
-          <div class="slide__header">
-            Sea Levels
-          </div>
-          <div class="slide__subheader">
-            Tides of Transformation: <br>Navigating the Rising Seas</br>
-          </div>
-          <a class="slide__button btn btn-gray-700 btn--icon-right btn--icon-arrow-right" href="{{ url_for('sea_levels') }}">
-            Find out more
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="slide active" style="background-image: url('{{ url_for('static', filename='images/slide-mask.png') }}'), url('{{ url_for('static', filename='images/test7.png') }}');">
-      <div class="container">
-        <div class="slide__content">
-          <div class="slide__header">
-            Air Quality
-          </div>
-          <div class="slide__subheader">
-            A Breathable Future: <br>Transforming Skies and Lives</br>
-          </div>
-          <a class="slide__button btn btn-gray-700 btn--icon-right btn--icon-arrow-right" href="{{ url_for('air_quality') }}">
-            Find out more
-          </a>
-        </div>
-      </div>
-    </div>
   
-    
   
     
   <div class="slide__arrows">
