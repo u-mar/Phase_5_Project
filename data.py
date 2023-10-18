@@ -2,7 +2,7 @@ import requests
 import psycopg2
 
 class DataExtractor:
-    def __init__(self, file_url, db_config, table_name, column_names):
+    def __init__(self, db_config,file_url, table_name, column_names):
         self.file_url = file_url
         self.db_config = db_config
         self.table_name = table_name
@@ -14,8 +14,6 @@ class DataExtractor:
             return response.content
         else:
             raise Exception(f"Failed to download the file. Status code: {response.status_code}")
-
-    import psycopg2
 
     def create_table_if_not_exists(self):
         # Connect to the database
@@ -37,7 +35,6 @@ class DataExtractor:
             
             # Commit the changes and close the cursor and connection
             connection.commit()
-
 
     def retrieve_existing_data(self):
         connection = psycopg2.connect(**self.db_config)
@@ -102,14 +99,11 @@ db_config = {
     'database': 'bluesky'
 }
 
-
 co2_file_url = 'https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_gl.csv'
 
 co2_table_name = 'co2_data'
 co2_column_names = ['year', 'month', 'decimal', 'average', 'average_unc', 'trend', 'trend_unc']
 
-
 co2_data_extractor = DataExtractor(co2_file_url, db_config, co2_table_name, co2_column_names)
 
-
-co2_data_extractor.run() 
+co2_data_extractor.run()
